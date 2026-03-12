@@ -54,4 +54,4 @@
 | teacher_id  | INT UNSIGNED |  NOT NULL |  айди преподователя из таблицы преподователь | 
 | subject_id | INT UNSIGNED | NOT NULL |  айди предмета из таблицы предеты |
 
-![описание бд](./dbveaver_nHfcflVL3s.png)
+![описание бд](./dbeaver_nHfcflVL3s.png)
