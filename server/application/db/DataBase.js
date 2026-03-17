@@ -24,4 +24,19 @@ class DataBase{
     await this.connection.execute("INSERT INTO `students` (year_of_admission, passport, inn, learning_format, group_id, qualification) VALUES (?,?,?,?,?,?)",[year_of_admission, passport, inn, learning_format, group_id, qualification]);
   }
 
+  async createTeacherProfike(direction, qualificationm, year_of_admission, passport, inn) {
+    await this.connection.execute("INSERT INTO `teachers` (direction, qualificationm, year_of_admission, passport, inn) VALUES (?,?,?,?,?)", [direction, qualificationm, year_of_admission, passport, inn]);
+  }
+
+  async createGrades(student_id, subject_id, boundary_control_1, boundary_control_2, boundary_control_3, dop_points) {
+    await this.connection.execute("INSERT INTO `grades` VALUES (?,?,?,?,?,?) (student_id, subject_id, boundary_control_1, boundary_control_2, boundary_control_3, dop_points)", [student_id, subject_id, boundary_control_1, boundary_control_2, boundary_control_3, dop_points]);
+  }
+
+  async createTeacherSubject(teacher_id, subject_id) {
+    await this.connection.execute("INSERT INTO `teacher_subject` VALUES (?,?) (teacher_id, subject_id)", [teacher_id, subject_id]);
+  }
+
+  async createSubject(name) {
+    await this.connection.execute("INSERT INTO `subjects` VALUES (?) (name)", [name]);
+  }
 }
