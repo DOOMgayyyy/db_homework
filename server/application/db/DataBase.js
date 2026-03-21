@@ -39,4 +39,8 @@ class DataBase{
   async createSubject(name) {
     await this.connection.execute("INSERT INTO `subjects` VALUES (?) (name)", [name]);
   }
+
+  async deleteByID(id){
+    await this.connection.execute("DELETE INTO `student` ")
+  }
 }

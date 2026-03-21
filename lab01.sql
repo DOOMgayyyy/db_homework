@@ -23,7 +23,10 @@ CREATE TABLE `teachers` (
   `passport` CHAR(10) NOT NULL UNIQUE,
   `inn` CHAR(12) NOT NULL UNIQUE
 );
-
+CREATE TABLE `subjects` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `name` VARCHAR(255) NOT NULL
+);
 CREATE TABLE `grades` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `student_id` INT UNSIGNED NOT NULL,
@@ -35,10 +38,7 @@ CREATE TABLE `grades` (
   FOREIGN KEY (`student_id`) REFERENCES `students`(`id`),
   FOREIGN KEY (`subject_id`) REFERENCES `subjects`(`id`)
 );
-CREATE TABLE `subjects` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `name` VARCHAR(255) NOT NULL
-);
+
 CREATE TABLE `teacher_subject` (
   `teacher_id` INT UNSIGNED NOT NULL,
   `subject_id` INT UNSIGNED NOT NULL,
